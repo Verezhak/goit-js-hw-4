@@ -1,34 +1,26 @@
 // 1
-function isEnoughCapacity(products, containerSize) {
-  let quantityProducts = 0;
-
-  for (let key in products) {
-    quantityProducts += products[key];
-  }
-
-  return quantityProducts <= containerSize;
-}
-
-// 2
-
 // function isEnoughCapacity(products, containerSize) {
 //   let quantityProducts = 0;
-//   const values = Object.values(products);
-//   for (const product of values) {
-//     quantityProducts += product;
-//   }
-//   return quantityProducts <= containerSize;
-// }
 
-// 3
-
-// function isEnoughCapacity(products, containerSize) {
-//   let quantityProducts = 0;
+//   for (let key in products) {
+//     quantityProducts += products[key];
 //   for (const product of Object.values(products)) {
 //     quantityProducts += product;
 //   }
+
 //   return quantityProducts <= containerSize;
 // }
+
+
+// 2
+
+function isEnoughCapacity(products, containerSize) {
+  let quantityProducts = 0;
+  for (const product of Object.values(products)) {
+    quantityProducts += product;
+  }
+  return quantityProducts <= containerSize;
+}
 
 console.log(isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)); // true
 
